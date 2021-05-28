@@ -1,5 +1,4 @@
 # responsive-club
-responsive club website
 
 This is my Codecademy responsive club project (for my imaginary guitar club). 
 
