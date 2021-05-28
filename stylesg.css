@@ -1,0 +1,240 @@
+/* -------- all site styles -------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&family=Roboto&family=Roboto+Slab:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  color: #262626;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1{
+  color: white;
+  font-family: 'Pattaya', sans-serif;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 5px #262626;
+  text-align: center;
+}
+
+h2 {
+  color: #c41a1a; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+h3 {
+  color: #262626;
+  margin: auto 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.4rem;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+h4, p, a {font-size: 1rem;}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {color: #c41a1a;}
+
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+li {padding: 0 0.5rem 0.75rem 0; }
+
+
+/* ---------- Mobile first layout ---------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.grid-container {
+  background-color: #262626;
+  display: grid;
+  grid-template: [row] 50px  [row] 60px repeat(2, [row] minmax(60px, 1fr)) [row] 10px [row] minmax(60px, 220px) / [col] 20px  repeat(6, [col] 1fr) ;
+  grid-gap: 10px;
+}
+
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5 {line-height: 1;}
+
+/* cntrls header layout */
+.item-1 {
+  grid-column: col 1 / -1;
+  grid-row: row 1 / span 2;
+  border-bottom: 2px solid #c41a1a;
+  padding-left: 3rem;
+}
+
+/* cntrls nav layout */
+.item-2 {
+  grid-column: col 2;
+  grid-row: row 2 / span 2;
+  max-height: 270px;
+  z-index: 5;
+  background: linear-gradient(to right, #ffb347, #ffcc33);
+  background-image: url(img/black-guitar-w5.jpg);
+  background-size: cover;
+  border: 2px solid #c41a1a;
+}
+
+/* cntrls body layout */
+.item-3 {
+  grid-column: col 3 / span 4;
+  grid-row: row 3 / span 1;
+  align-content: space-evenly;
+  background-color: #f8ead6; /* champagne*/
+  z-index: 1;
+}
+
+.item-4 {
+  grid-column: col 3 / span 4;
+  grid-row: row 4 / span 1;
+  background-color: #f8ead6;
+}
+
+/* ---------- tablets + ----------  */
+
+@media screen and (min-width: 700px) {
+  .item-2 {max-height: 350px;}
+
+  .item-3, 
+  .item-4 {
+    justify-content: center;
+    align-content: flex-start;
+    z-index: 1;
+    border: 20px solid;
+    border-image-slice: 1;
+    border-width: 10px;
+    border-image-source: linear-gradient(to right, rgb(38,38,38), rgb(248,234,214),rgb(248,234,214), rgb(248,234,214), rgb(38,38,38));*/
+  }
+
+  .item-3, 
+  .item-4 {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .intro, 
+  .photos-3, 
+  .photos-4 {
+    padding: 5px;
+  }
+  
+  .intro {
+    text-align: center;
+    width: 90%;
+  }
+  
+  .photos-3 {
+    align-self: flex-end;
+    width: 30%;
+  }
+  
+  .photos-4 {
+    margin-top: 1rem;  
+    align-self: center;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h1, h2 {padding: 0.2rem 2rem;} 
+  h1 {font-size: 3.5rem;}
+}
+
+
+/* ---------- desktops + ----------  */
+
+@media screen and (min-width: 1200px) {
+  .item-2 { max-height: 450px;}
+  .photos-3, .photos-4 {width: 20%; }
+}
+
+/* cntrls footer layout */
+.item-5 {
+  grid-column: col 1 / -1;
+  grid-row: row 6;
+  background: linear-gradient(to top, #485563, #29323c);
+}
+
+.footrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.footcol {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-basis: 33%;
+}
+
+.footcol > div {
+  margin: auto;
+  padding: 4px 4px 4px 8px;
+}
+
+.footcol > h4, 
+.footcol > div p, 
+.footcol > div a, 
+.footcol > div span {
+  color: #f8ead6;
+  display: inline;
+  font-size: 0.7rem;
+}
+
+.footcol > div a:hover {color: #c41a1a;}
+.footcol > div span { white-space: pre;}
+
+.last {
+  background-color: #c41a1a;
+  line-height: 2rem;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/* ---------- tablets + ----------  */
+
+@media screen and (min-width: 700px) {
+  .item-5 {
+    margin-top: 2rem;
+    max-height: 120px;
+  }
+  
+  .footcol {padding-right: 5px; }
+  
+  .footcol h4 {margin: auto; }
+  
+  .last {
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  .last > p {display: block; }
+ }
+
